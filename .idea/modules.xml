@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TourOffice.iml" filepath="$PROJECT_DIR$/TourOffice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OfficeTour.iml" filepath="$PROJECT_DIR$/OfficeTour.iml" />
     </modules>
   </component>
 </project>

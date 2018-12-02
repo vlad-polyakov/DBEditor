@@ -4,16 +4,18 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import view.MainWindow;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        HBox root = new HBox();
-        primaryStage.setTitle("DB Editor");
-        primaryStage.setScene(new Scene(root, 800, 800));
+        MainWindow mainWindow = new MainWindow();
+        primaryStage.setTitle("Hello World");
+        VBox root = mainWindow.createWindow();
+        primaryStage.setScene(new Scene(root, 1000, 1000));
         primaryStage.show();
     }
 

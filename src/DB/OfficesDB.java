@@ -18,8 +18,8 @@ public class OfficesDB {
                         rs.getString(2),
                         rs.getString(4),
                         rs.getString(5),
-                        rs.getInt(3),
-                        rs.getInt(6)
+                        rs.getInt(6),
+                        rs.getInt(3)
                 );
               /* Office office = new Office();
                office.setName(rs.getString(1));
@@ -49,5 +49,15 @@ public class OfficesDB {
         }
         catch (SQLException ex){System.out.print("No");}
         //catch (ClassNotFoundException ex){System.out.print("www");}
+    }
+    public void delete(Office office){
+        String InsertInfo = "DELETE FROM offices WHERE name = ?";
+        DBConnection dbConnection = new DBConnection();
+        try{
+            PreparedStatement prst = dbConnection.getConnection().prepareStatement(InsertInfo);
+            prst.setString(1,office.getName());
+            prst.execute();
+        }
+        catch (SQLException ex){System.out.print("No");}
     }
 }

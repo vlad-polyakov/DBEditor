@@ -9,6 +9,9 @@ public class TablesInfo {
     private ObservableList<City> cityList;
     private ObservableList<Price_list> priceList;
     private ObservableList<Tour> tourList;
+    private ObservableList<Tour> taskList;
+    private ObservableList<Hotel> FiveStarsHotelList;
+    private ObservableList<PriceOffice> priceOfficeList;
 
     public TablesInfo(){
         officeList = FXCollections.observableArrayList();
@@ -16,7 +19,35 @@ public class TablesInfo {
         cityList = FXCollections.observableArrayList();
         priceList = FXCollections.observableArrayList();
         tourList = FXCollections.observableArrayList();
+        taskList = FXCollections.observableArrayList();
+        FiveStarsHotelList = FXCollections.observableArrayList();
+        priceOfficeList = FXCollections.observableArrayList();
     }
+
+    public ObservableList<PriceOffice> getPriceOfficeList() {
+        return priceOfficeList;
+    }
+
+    public void setPriceOfficeList(ObservableList<PriceOffice> priceOfficeList) {
+        this.priceOfficeList = priceOfficeList;
+    }
+
+    public ObservableList<Hotel> getFiveStarsHotelList() {
+        return FiveStarsHotelList;
+    }
+
+    public void setFiveStarsHotelList(ObservableList<Hotel> fiveStarsHotelList) {
+        FiveStarsHotelList = fiveStarsHotelList;
+    }
+
+    public ObservableList<Tour> getTaskList() {
+        return taskList;
+    }
+
+    public void setTaskList(ObservableList<Tour> taskList) {
+        this.taskList = taskList;
+    }
+
     public void setOfficeList(ObservableList<Office> officeList) {
         this.officeList = officeList;
     }

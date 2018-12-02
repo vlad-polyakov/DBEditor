@@ -7,7 +7,7 @@ public class Office {
     private String address;
     private String FIO;
     private int phone_number;
-    private String tableName = "offices";
+
 
    public Office(String name, String voucher, String address, String FIO, int phone_number, int cost){
         this.name = name;

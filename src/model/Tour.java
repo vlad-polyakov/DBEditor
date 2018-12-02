@@ -8,7 +8,8 @@ public class Tour {
     private int hotel_id;
     private String transport_type;
     private String departure_point;
-    public Tour(int id, String type, int days, int city_id,int hotel_id,String transport_type,String departure_point){
+    private String officeName;
+    public Tour(int id, String type, int days, int city_id,int hotel_id,String transport_type,String departure_point,String officeName){
         this.city_id = city_id;
         this.days = days;
         this.departure_point = departure_point;
@@ -16,9 +17,19 @@ public class Tour {
         this.id = id;
         this.transport_type = transport_type;
         this.type = type;
+        this.officeName = officeName;
     }
+    public Tour(){}
     public int getId() {
         return id;
+    }
+
+    public String getOfficeName() {
+        return officeName;
+    }
+
+    public void setOfficeName(String officeName) {
+        this.officeName = officeName;
     }
 
     public String getType() {

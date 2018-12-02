@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import model.City;
 import model.Hotel;
 import model.Office;
+import model.Tour;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -49,5 +50,42 @@ public class HotelDB {
         }
         catch (SQLException ex){System.out.print("No");}
         //catch (ClassNotFoundException ex){System.out.print("www");}
+    }
+    public void delete(Hotel hotel){
+        String InsertInfo = "DELETE FROM hotels WHERE id = ?";
+        DBConnection dbConnection = new DBConnection();
+        try{
+            PreparedStatement prst = dbConnection.getConnection().prepareStatement(InsertInfo);
+            prst.setInt(1,hotel.getId());
+            prst.execute();
+        }
+        catch (SQLException ex){System.out.print("No");}
+    }
+    public ObservableList<Hotel> showInfo(){
+        ObservableList<Hotel> data = FXCollections.observableArrayList();
+        DBConnection dbConnection = new DBConnection();
+        try {
+            PreparedStatement ps =  dbConnection.getConnection().prepareStatement("SELECT * FROM hotels WHERE stars = ?");
+            ps.setInt(1,5);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Hotel hotel = new Hotel(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getInt(4)
+                );
+              /* Office office = new Office();
+               office.setName(rs.getString(1));
+               office.setVoucher(rs.getString(2));
+               office.setCost(rs.getInt(5));
+               off*/
+                data.add(hotel);
+            }
+
+        } catch (SQLException ex){
+            System.out.print("fuck");
+        }
+        return data;
     }
 }

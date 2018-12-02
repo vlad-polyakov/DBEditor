@@ -49,4 +49,14 @@ public class CityDB {
         catch (SQLException ex){System.out.print("No");}
         //catch (ClassNotFoundException ex){System.out.print("www");}
     }
+    public void delete(City city){
+        String InsertInfo = "DELETE FROM cities WHERE id = ?";
+        DBConnection dbConnection = new DBConnection();
+        try{
+            PreparedStatement prst = dbConnection.getConnection().prepareStatement(InsertInfo);
+            prst.setInt(1,city.getId());
+            prst.execute();
+        }
+        catch (SQLException ex){System.out.print("No");}
+    }
 }
